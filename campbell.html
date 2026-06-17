@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campbell Civic Improvement Commission Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #f97316, #eab308, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 179, 8, 0.1));
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #f97316, #eab308, #22c55e);
+        }
+        
+        .initiative-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .initiative-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #f97316, #eab308);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(249, 115, 22, 0.5); border-radius: 4px; }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.3), transparent);
+        }
+        
+        a { color: #fbbf24; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="text-white p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8 fade-in text-center">
+            <div class="flex items-center justify-center gap-3 mb-2">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-yellow-500 flex items-center justify-center">
+                    <i data-lucide="building-2" class="w-7 h-7"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-2">Campbell Civic Improvement Commission</h1>
+            <p class="text-gray-400">City of Campbell, California • Community Beautification & Grants</p>
+        </header>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold">2022–2023</div>
+                <div class="text-gray-400 text-sm">Meeting records</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-orange-400">6</div>
+                <div class="text-gray-400 text-sm">Subcommittees</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-yellow-400">7</div>
+                <div class="text-gray-400 text-sm">Commissioners</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-green-400">5</div>
+                <div class="text-gray-400 text-sm">Major Projects</div>
+            </div>
+        </div>
+
+        <!-- KEY INITIATIVES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="rocket" class="w-6 h-6 text-orange-400"></i>
+                Key Projects
+            </h2>
+            <div class="space-y-4">
+                <!-- Initiative 1 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="heart" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Campbell Cares / Neighborhood Refresh</h3>
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-medium">Planning</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Home improvement assistance for seniors and low-income residents. Volunteer-driven with Rotary partnership.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Selection criteria in development</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Neighborhood Associations involved</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Youth Commission invited</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 2 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="camera" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Capture Campbell</h3>
+                                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-medium">2023–2024</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Youth photo contest. Flyer developed, seeking sponsors. Considering photo sessions with professional photographer.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">WheelAway Cycle Center sponsor</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Photoshop sessions planned</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Library partnership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 3 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Explore Art</h3>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-medium">Ongoing</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Public art initiatives including sidewalk chalk art at community events, gateway signs, and Art Outside the Box.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Oktoberfest chalk art</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Boogie on the Bayou</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Gateway signs</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Youth Commission collab</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 4 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="hand-coins" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Social Service Subgrants</h3>
+                                <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">Annual Cycle</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Annual funding cycle for nonprofit organizations serving Campbell residents. $500 grants each.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Dec: Application release</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Jan: Deadline</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Feb-Apr: Hearings</span>
+                                <span class="px-2 py-1 rounded bg-white/10">May: Council action</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 5 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="home" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Neighborhood Association Grants</h3>
+                                <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">✓ Awarded</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">$500 grants to local neighborhood associations. April 2023: all four applicants funded ($2,000 total).</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Campbell Village</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Downtown Campbell</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Hamann Park</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Moreland West</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- TIMELINE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="calendar" class="w-6 h-6 text-orange-400"></i>
+                Timeline
+            </h2>
+            <div class="relative">
+                <div class="absolute left-4 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                <!-- 2022 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center z-10 text-sm font-bold">22</div>
+                        <span class="text-xl font-bold">2022</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-orange-400 w-16">MAR</span>
+                            <span class="text-sm">FY22 Neighborhood Association grant applications reviewed</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-yellow-400 w-16">DEC</span>
+                            <span class="text-sm">City Council approves two new commissioners: Gary Coluccio & Thomas Russell</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">DEC</span>
+                            <span class="text-sm">Council reorganization: Mayor Resnikoff & Councilmember Gibbons term out</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center z-10 text-sm font-bold">23</div>
+                        <span class="text-xl font-bold">2023</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-green-400 w-16">JAN</span>
+                            <span class="text-sm">New commissioners Coluccio & Russell onboarded</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-green-500/50">
+                            <span class="text-xs text-green-400 w-16">MAR ⭐</span>
+                            <span class="text-sm font-medium">Historical Museum reopens after 3-year COVID closure — Muwekma Ohlone exhibit "Back from Extinction"</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">APR</span>
+                            <span class="text-sm">Neighborhood Association grants awarded: $500 each to 4 orgs</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-orange-500/50">
+                            <span class="text-xs text-orange-400 w-16">MAY ✓</span>
+                            <span class="text-sm font-medium">Meeting time changed: 7:30pm → 6:00pm (Resolution adopted)</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-gray-400 w-16">JUL-AUG</span>
+                            <span class="text-sm">Summer meetings cancelled; Social at A. Bellagio (Aug 21)</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">SEPT</span>
+                            <span class="text-sm">Sourcewise HCBS grant for Senior Nutrition dining room; Shirley Loffer retiring after 6 years</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-pink-400 w-16">OCT</span>
+                            <span class="text-sm">Oktoberfest sidewalk chalk art project with Youth Commission</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">NOV</span>
+                            <span class="text-sm">Commissioner Russell resigns; Library renovation groundbreaking (Measure O)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- SUBCOMMITTEES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="users" class="w-6 h-6 text-orange-400"></i>
+                Subcommittees
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="heart" class="w-5 h-5 text-pink-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Campbell Cares</h3>
+                    <p class="text-xs text-gray-500">Malcolm, Bracher</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="camera" class="w-5 h-5 text-blue-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Capture Campbell</h3>
+                    <p class="text-xs text-gray-500">Yoshikawa, Naylor, Coluccio</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="palette" class="w-5 h-5 text-purple-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Explore Art</h3>
+                    <p class="text-xs text-gray-500">Dooley, Malcolm, Coluccio</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="home" class="w-5 h-5 text-orange-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Neighborhood Assoc.</h3>
+                    <p class="text-xs text-gray-500">Dooley, Yoshikawa</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="award" class="w-5 h-5 text-green-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Beautification Awards</h3>
+                    <p class="text-xs text-gray-500">Bracher, Naylor</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="signpost" class="w-5 h-5 text-cyan-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Street Name</h3>
+                    <p class="text-xs text-gray-500">Dooley, Yoshikawa, Bracher</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PEOPLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="users" class="w-6 h-6 text-orange-400"></i>
+                People
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-4 text-orange-400">Commissioners (2023)</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span class="font-medium">Yoshikawa</span>
+                            <span class="px-2 py-0.5 rounded bg-orange-500/30 text-orange-300 text-xs">Chair</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Naylor</span>
+                            <span class="text-xs text-gray-500">Vice Chair</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Bracher</span>
+                            <span class="text-xs text-gray-500">Campbell Cares, Beautification</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Malcolm</span>
+                            <span class="text-xs text-gray-500">Campbell Cares, Explore Art</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Dooley</span>
+                            <span class="text-xs text-gray-500">Explore Art, Neighborhood</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Coluccio</span>
+                            <span class="text-xs text-gray-500">Capture Campbell, Explore Art</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5 opacity-60">
+                            <span>Russell</span>
+                            <span class="text-xs text-red-400">Resigned Nov 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="glass rounded-2xl p-5 mb-4">
+                        <h3 class="font-semibold mb-4 text-blue-400">Staff</h3>
+                        <div class="space-y-2">
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Brian Loventhal</div>
+                                <div class="text-xs text-gray-500">City Manager</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Angelique Gaeta</div>
+                                <div class="text-xs text-gray-500">Assistant City Manager</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Diana Johnson</div>
+                                <div class="text-xs text-gray-500">Recording Secretary</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Tina Wong-Erling</div>
+                                <div class="text-xs text-gray-500">Senior Services Supervisor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <h3 class="font-semibold mb-4 text-yellow-400">Meeting Info</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                                <span>2nd Thursday, 6:00 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+                                <span>70 N First St, Campbell</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="clock" class="w-4 h-4 text-gray-500"></i>
+                                <span class="text-green-400">Changed from 7:30pm (May 2023)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- KEY PARTNERSHIPS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="handshake" class="w-6 h-6 text-orange-400"></i>
+                Key Partnerships
+            </h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
+                            <i data-lucide="utensils" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Sourcewise</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Senior Nutrition Program partner. Received HCBS grant for dining room upgrades. Shirley Loffer served 6 years as Advisory Council rep.</p>
+                    <span class="text-xs text-green-400">Active grant funding</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                            <i data-lucide="users" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Youth Commission</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Joint projects including Oktoberfest sidewalk chalk art. Exploring Campbell Cares involvement.</p>
+                    <span class="text-xs text-blue-400">Active collaboration</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                            <i data-lucide="landmark" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Campbell Museums</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Ainsley House & Historical Museum. Foundation supports scholarships and events. Garden Concert series.</p>
+                    <span class="text-xs text-purple-400">Community anchor</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- MUSEUMS & COMMUNITY -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="landmark" class="w-6 h-6 text-orange-400"></i>
+                Museums & Community Assets
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-purple-400">Historical Museum</h3>
+                    <p class="text-sm text-gray-400 mb-3">Reopened March 2023 after 3-year COVID closure with Muwekma Ohlone exhibit "Back from Extinction."</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 shrink-0"></i>
+                            <span>Hands-on-History field trips resumed Mar 2023</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="check" class="w-4 h-4 text-green-400 mt-0.5 shrink-0"></i>
+                            <span>Community exhibit on General Stores</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-pink-400">Ainsley House</h3>
+                    <p class="text-sm text-gray-400 mb-3">Historic house museum with seasonal events, holiday tours, and garden concerts.</p>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="music" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
+                            <span>Garden Concert series (spring)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="gift" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
+                            <span>Holiday Teas and Tours (December)</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="baby" class="w-4 h-4 text-pink-400 mt-0.5 shrink-0"></i>
+                            <span>Santa visits, Mother's Day Tea</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PUBLIC PARTICIPATION -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="megaphone" class="w-6 h-6 text-orange-400"></i>
+                Public Participation
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-green-400">How to Participate</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-4 h-4 text-green-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">In-Person</div>
+                                <div class="text-gray-500">70 North First Street, Campbell, CA 95008<br>Doetsch Conference Room</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="mic" class="w-4 h-4 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Oral Requests</div>
+                                <div class="text-gray-500">Public comment period at each meeting</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Written Communications</div>
+                                <div class="text-gray-500">Submit to Recording Secretary before meeting</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-blue-400">External Links</h3>
+                    <div class="space-y-3 text-sm">
+                        <a href="https://www.youtube.com/user/CityofCampbell/videos" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="youtube" class="w-4 h-4 text-red-400"></i>
+                            <div>
+                                <div class="font-medium text-white">Meeting Recordings</div>
+                                <div class="text-gray-500">YouTube: City of Campbell</div>
+                            </div>
+                        </a>
+                        <a href="https://www.campbellca.gov" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 text-blue-400"></i>
+                            <div>
+                                <div class="font-medium text-white">City of Campbell</div>
+                                <div class="text-gray-500">campbellca.gov</div>
+                            </div>
+                        </a>
+                        <a href="https://www.campbellmuseums.com" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="landmark" class="w-4 h-4 text-purple-400"></i>
+                            <div>
+                                <div class="font-medium text-white">Campbell Museums</div>
+                                <div class="text-gray-500">campbellmuseums.com</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="phone" class="w-4 h-4 text-green-400"></i>
+                            <div>
+                                <div class="font-medium">City Clerk</div>
+                                <div class="text-gray-500">(408) 866-2117</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 border-t border-white/10 text-center text-gray-500 text-sm">
+            <p>Data source: Campbell Civic Improvement Commission Meeting Minutes (Dec 2022 – Nov 2023)</p>
+            <p class="mt-1">Generated by OpenClaw • June 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

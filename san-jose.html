@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San José Senior Citizens Commission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #3b82f6, #1d4ed8, #1e40af);
+        }
+        
+        .initiative-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .initiative-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 4px; }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+        }
+        
+        a { color: #93c5fd; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .district-badge {
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(59, 130, 246, 0.2);
+            color: #93c5fd;
+        }
+    </style>
+</head>
+<body class="text-white p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8 fade-in text-center">
+            <div class="flex items-center justify-center gap-3 mb-2">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                    <i data-lucide="landmark" class="w-7 h-7"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-2">San José SCC</h1>
+            <p class="text-gray-400">Senior Citizens Commission • City of San José</p>
+            <p class="text-gray-500 text-sm mt-1">Parks, Recreation and Neighborhood Services Department</p>
+        </header>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold">2018–2025</div>
+                <div class="text-gray-400 text-sm">7 years of records</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-400">10</div>
+                <div class="text-gray-400 text-sm">Council Districts</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-cyan-400">158K</div>
+                <div class="text-gray-400 text-sm">Meals Served (2024)</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-green-400">+20%</div>
+                <div class="text-gray-400 text-sm">Nutrition Growth</div>
+            </div>
+        </div>
+
+        <!-- KEY INITIATIVES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="rocket" class="w-6 h-6 text-blue-400"></i>
+                Key Initiatives
+            </h2>
+            <div class="space-y-4">
+                <!-- Initiative 1 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="utensils" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Senior Nutrition Program</h3>
+                                <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">Record Growth</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">158,692 meals served at San José sites in 2024 — 20% increase from 132,293 in 2023. Now higher than pre-COVID attendance. County reviewing budget to increase meals at City sites.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Congregate meals</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Multiple sites citywide</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Reservation system coming</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 2 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="file-text" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Budget Priorities Memo</h3>
+                                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-medium">Annual</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Commission writes annual Budget Priorities Recommendation Memo to Mayor and City Council. Ad Hoc Committee develops priorities including Affordable Housing. 2024 memo specifically cited by Council Member Foley.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">March deadline</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Council advocacy</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Housing priority</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 3 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="bus" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">R.Y.D.E. Transportation</h3>
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-medium">Ongoing</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Reach Your Destination Easily — senior transportation program. Sam Leale serves as Project Specialist and R.Y.D.E. Coordinator. Presentation to Commission June 2024.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">On-demand rides</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Outreach Lunch Riders</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 4 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Age-Friendly Survey</h3>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-medium">Due Mar 2025</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">San José asked to collect 1,000+ surveys for Santa Clara County. Deadline extended to March 31, 2025. QR code flyers distributed.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">1,000+ target</span>
+                                <span class="px-2 py-1 rounded bg-white/10">County partnership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 5 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="palette" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Color Walk</h3>
+                                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-medium">Annual Event</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Community walking event with 211 Bay Area United Way sponsorship ($50 gift card door prizes). Other Council Districts requesting the event. Instagram coverage by staff.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">211 partnership</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Multi-district expansion</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 6 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="trees" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Senior Safari</h3>
+                                <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 text-xs font-medium">CM Foley</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Council Member Pam Foley kicked off Senior Safari on May 23, 2024. Senior Walk outdoors at a park planned for May 2025. Senior Symposium coming Fall 2025.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Happy Hollow Zoo</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Citywide Trips</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 7 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="laptop" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Digital Inclusion</h3>
+                                <span class="px-3 py-1 rounded-full bg-teal-500/20 text-teal-400 text-xs font-medium">Grant-Funded</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Digital literacy program led by Edwardson Sabando. Free grant-funded program helping seniors navigate technology.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Tech literacy</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Free program</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- TIMELINE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="calendar" class="w-6 h-6 text-blue-400"></i>
+                Timeline Highlights
+            </h2>
+            <div class="relative">
+                <div class="absolute left-4 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                <!-- 2018 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center z-10 text-sm font-bold">18</div>
+                        <span class="text-xl font-bold">2018</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">FEB</span>
+                            <span class="text-sm">Chair Gannon; Housing study subcommittee formed; AARP Livable Community Charette</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">FEB</span>
+                            <span class="text-sm">Commissioner Van Cleef appointed to CTMA Board as Senior Commission rep</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center z-10 text-sm font-bold">21</div>
+                        <span class="text-xl font-bold">2021</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">FEB</span>
+                            <span class="text-sm">SCC Senior Care Commission presentation (Tylor Taylor); CALTRANS grant letter of support</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">MAR</span>
+                            <span class="text-sm">No quorum — meeting informational only (COVID impact)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-violet-500 flex items-center justify-center z-10 text-sm font-bold">22</div>
+                        <span class="text-xl font-bold">2022</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">JAN</span>
+                            <span class="text-sm">Housing Study Subcommittee formed; Commissioner Castillo featured; Cypress Senior Center showcase</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">JAN</span>
+                            <span class="text-sm">SALA Senior Legal Services, Health Mobile Dental, Bay Area Mental Health programs announced</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center z-10 text-sm font-bold">23</div>
+                        <span class="text-xl font-bold">2023</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">DEC</span>
+                            <span class="text-sm">Meeting day changed to 1st Wednesday (from 2nd Thursday); Kirk Community Center confirmed</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">DEC</span>
+                            <span class="text-sm">Older Adult Transportation update by Rhonda Vargas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center z-10 text-sm font-bold">24</div>
+                        <span class="text-xl font-bold">2024</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-blue-500/50">
+                            <span class="text-xs text-blue-400 w-16">FEB ⭐</span>
+                            <span class="text-sm font-medium">In-person public comment limited to in-person only (policy change)</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">MAY</span>
+                            <span class="text-sm">Senior Safari kickoff; Older Americans Month; 132K→158K meals milestone</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">JUN</span>
+                            <span class="text-sm">211 Bay Area & R.Y.D.E. presentations; 2023-24 Work Plan approved; Bylaws subcommittee formed</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-pink-400 w-16">JUN</span>
+                            <span class="text-sm">Color Walk success — other districts requesting; Resource Fair at Almaden CC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center z-10 text-sm font-bold">25</div>
+                        <span class="text-xl font-bold">2025</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">FEB</span>
+                            <span class="text-sm">Bylaws amendments approved; 2024-25 Work Plan approved; Budget memo approved</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-amber-500/50">
+                            <span class="text-xs text-amber-400 w-16">FEB ⚠️</span>
+                            <span class="text-sm">PRNS budget shortfall announced — working to protect Senior Nutrition from cuts</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">FEB</span>
+                            <span class="text-sm">Meeting moved to Roosevelt Community Center; Reservation system for SNP sites in development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PEOPLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="users" class="w-6 h-6 text-blue-400"></i>
+                People
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-4 text-blue-400">Commissioners (2025)</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span class="font-medium">Gina Gates-Lopez</span>
+                                <span class="district-badge">D3</span>
+                            </div>
+                            <span class="px-2 py-0.5 rounded bg-blue-500/30 text-blue-300 text-xs">Chair</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span>Lilia Hancock</span>
+                                <span class="district-badge">D4</span>
+                            </div>
+                            <span class="text-xs text-gray-500">Vice Chair, Berryessa Advisory</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span>Kohli Singh</span>
+                                <span class="district-badge">D2</span>
+                            </div>
+                            <span class="text-xs text-gray-500">Mental health advocate</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span>Obdulia Corona</span>
+                                <span class="district-badge">D5</span>
+                            </div>
+                            <span class="text-xs text-gray-500"></span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span>Fane Williams</span>
+                                <span class="district-badge">D7</span>
+                            </div>
+                            <span class="text-xs text-gray-500"></span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span>Ruthie Medina</span>
+                                <span class="district-badge">D8</span>
+                            </div>
+                            <span class="text-xs text-gray-500">Veterans Affairs interest</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <div class="flex items-center gap-2">
+                                <span>Lori Rodrigues</span>
+                                <span class="district-badge">D9</span>
+                            </div>
+                            <span class="text-xs text-gray-500"></span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5 opacity-50">
+                            <span class="text-gray-500">Vacancies: D1, D6, D10, Citywide</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="glass rounded-2xl p-5 mb-4">
+                        <h3 class="font-semibold mb-4 text-cyan-400">Staff (PRNS)</h3>
+                        <div class="space-y-2">
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Janine Bray</div>
+                                <div class="text-xs text-gray-500">Commission Secretary</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Jeremy Shoffner</div>
+                                <div class="text-xs text-gray-500">Superintendent, Citywide Older Adult Programs</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Rhonda Vargas</div>
+                                <div class="text-xs text-gray-500">Parks, Rec & Facilities Supervisor</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Maria De Leon</div>
+                                <div class="text-xs text-gray-500">Deputy Director, PRNS</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Edwardson Sabando</div>
+                                <div class="text-xs text-gray-500">Digital Inclusion Program</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-5 mb-4">
+                        <h3 class="font-semibold mb-4 text-amber-400">Council Liaison</h3>
+                        <div class="p-2 rounded-lg bg-white/5">
+                            <div class="font-medium">Council Member Pam Foley</div>
+                            <div class="text-xs text-gray-500">District 9 — Active champion for seniors</div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <h3 class="font-semibold mb-4 text-purple-400">Meeting Info</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                                <span>1st Thursday, 2:30 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+                                <span>Roosevelt Community Center (2025)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar-x" class="w-4 h-4 text-gray-500"></i>
+                                <span>July recess, August retreat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PAST COMMISSIONERS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="history" class="w-6 h-6 text-blue-400"></i>
+                Notable Past Commissioners
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Gabrielle Antolovich</h3>
+                    <p class="text-xs text-gray-500">Chair 2021-2023</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Donna Castillo</h3>
+                    <p class="text-xs text-gray-500">Vice Chair, Housing advocate</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">May Miller</h3>
+                    <p class="text-xs text-gray-500">Citywide rep, long-serving</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Dr. Jelili Apalara</h3>
+                    <p class="text-xs text-gray-500">D1, COVID briefings</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Warren Gannon</h3>
+                    <p class="text-xs text-gray-500">Chair 2018</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Marcia Cohen-Zakai</h3>
+                    <p class="text-xs text-gray-500">D3, 2021-22</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Sandy Runyan</h3>
+                    <p class="text-xs text-gray-500">D6, CA Senior Legislature</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <h3 class="font-medium text-sm mb-1">Giovanna Erkanat</h3>
+                    <p class="text-xs text-gray-500">D6, 2024</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- KEY PARTNERSHIPS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="handshake" class="w-6 h-6 text-blue-400"></i>
+                Key Partnerships
+            </h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                            <i data-lucide="phone" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h3 class="font-semibold">211 Bay Area / United Way</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Gabby Fuller, Program Coordinator. Gift card donations for Color Walk. Resource connections for seniors.</p>
+                    <span class="text-xs text-blue-400">Event sponsor</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
+                            <i data-lucide="users" class="w-5 h-5 text-cyan-400"></i>
+                        </div>
+                        <h3 class="font-semibold">AARP California</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Ameen Khan, Associate State Director. Regular updates to Commission on advocacy and community engagement.</p>
+                    <span class="text-xs text-cyan-400">Policy partner</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                            <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <h3 class="font-semibold">SCC Senior Care Commission</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">County-level coordination on senior care policy. Tylor Taylor presented in 2021.</p>
+                    <span class="text-xs text-purple-400">County liaison</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
+                            <i data-lucide="heart" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Sourcewise</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">County Area Agency on Aging. Contract signed March 2021. Senior nutrition funding coordination.</p>
+                    <span class="text-xs text-green-400">County partner</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center">
+                            <i data-lucide="gavel" class="w-5 h-5 text-amber-400"></i>
+                        </div>
+                        <h3 class="font-semibold">CA Senior Legislature</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Commissioner Runyan provided state budget updates. Advocacy for senior-focused legislation.</p>
+                    <span class="text-xs text-amber-400">State advocacy</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center">
+                            <i data-lucide="hammer" class="w-5 h-5 text-pink-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Rebuild Together SV</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Victoria Chang presented home repair assistance for seniors. Free home modifications.</p>
+                    <span class="text-xs text-pink-400">Housing support</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PUBLIC PARTICIPATION -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="megaphone" class="w-6 h-6 text-blue-400"></i>
+                Public Participation
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-green-400">How to Participate</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-4 h-4 text-green-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">In-Person Only (as of Feb 2024)</div>
+                                <div class="text-gray-500">Roosevelt Community Center<br>2 min limit, translator time doubled</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Written Comments</div>
+                                <div class="text-gray-500"><a href="mailto:OlderAdultPrograms@sanjoseca.gov">OlderAdultPrograms@sanjoseca.gov</a><br>Becomes part of public record</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="clock" class="w-4 h-4 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Agenda Requirements</div>
+                                <div class="text-gray-500">Posted 72 hours before meeting<br>No action on items not on agenda</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-blue-400">External Links</h3>
+                    <div class="space-y-3 text-sm">
+                        <a href="http://www.sanjoseca.gov/seniorcommission" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="file-text" class="w-4 h-4 text-blue-400"></i>
+                            <div>
+                                <div class="font-medium text-white">Agendas & Minutes</div>
+                                <div class="text-gray-500">sanjoseca.gov/seniorcommission</div>
+                            </div>
+                        </a>
+                        <a href="https://www.sanjoseca.gov" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 text-cyan-400"></i>
+                            <div>
+                                <div class="font-medium text-white">City of San José</div>
+                                <div class="text-gray-500">sanjoseca.gov</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="phone" class="w-4 h-4 text-green-400"></i>
+                            <div>
+                                <div class="font-medium">Commission Staff</div>
+                                <div class="text-gray-500">(408) 535-5659</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="building" class="w-4 h-4 text-amber-400"></i>
+                            <div>
+                                <div class="font-medium">PRNS Department</div>
+                                <div class="text-gray-500">200 E Santa Clara St, 9th Floor</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 border-t border-white/10 text-center text-gray-500 text-sm">
+            <p>Data source: San José Senior Citizens Commission Meeting Minutes (Feb 2018 – Feb 2025)</p>
+            <p class="mt-1">Generated by OpenClaw • June 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

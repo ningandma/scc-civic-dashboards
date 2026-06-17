@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain View Senior Advisory Committee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(167, 139, 250, 0.2);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #a78bfa, #8b5cf6, #7c3aed);
+        }
+        
+        .initiative-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .initiative-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(167, 139, 250, 0.2);
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #a78bfa, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(167, 139, 250, 0.5); border-radius: 4px; }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.3), transparent);
+        }
+        
+        a { color: #c4b5fd; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        .warning-banner {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+    </style>
+</head>
+<body class="text-white p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8 fade-in text-center">
+            <div class="flex items-center justify-center gap-3 mb-2">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
+                    <i data-lucide="mountain" class="w-7 h-7"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-2">Mountain View SAC</h1>
+            <p class="text-gray-400">Senior Advisory Committee • City of Mountain View</p>
+            <p class="text-gray-500 text-sm mt-1">Mountain View Senior Center • 266 Escuela Avenue</p>
+        </header>
+
+        <!-- Warning Banner -->
+        <div class="warning-banner rounded-2xl p-4 mb-8 flex items-center gap-3">
+            <i data-lucide="alert-triangle" class="w-6 h-6 text-amber-400 shrink-0"></i>
+            <div class="text-sm">
+                <span class="font-semibold text-amber-400">Note:</span> 
+                <span class="text-gray-300">Multiple 2024 meetings were cancelled. Committee activity appears reduced compared to prior years.</span>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold">2022–2025</div>
+                <div class="text-gray-400 text-sm">3 years of records</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-violet-400">4</div>
+                <div class="text-gray-400 text-sm">Subcommittees</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-purple-400">4–7</div>
+                <div class="text-gray-400 text-sm">Committee Members</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-fuchsia-400">2018</div>
+                <div class="text-gray-400 text-sm">Age-Friendly Survey</div>
+            </div>
+        </div>
+
+        <!-- KEY INITIATIVES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="rocket" class="w-6 h-6 text-violet-400"></i>
+                Key Initiatives
+            </h2>
+            <div class="space-y-4">
+                <!-- Initiative 1 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">CASOA Senior Survey</h3>
+                                <span class="px-3 py-1 rounded-full bg-violet-500/20 text-violet-400 text-xs font-medium">Avenidas</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Community Assessment Survey for Older Adults conducted by Avenidas (2022). Executive Summary subcommittee developing findings presentation.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Multi-city survey</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Palo Alto data shared</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 2 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="megaphone" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">SAC Outreach</h3>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs font-medium">2023-24</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Outreach subcommittee presenting Executive Summary to other city boards, committees, and commissions. Chair Tymes emailing staff liaisons.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Cross-commission education</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 3 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="home" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Rent Stabilization Education</h3>
+                                <span class="px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs font-medium">Sept 2022</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Patricia Black (Senior Management Analyst) presented on City's Rent Stabilization and Eviction Protections program to the committee.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Housing security</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Senior protections</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 4 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="book-open" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Long-Term Care Awareness</h3>
+                                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-medium">Vice Chair Tymes</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Vice Chair Tymes authored "American Long Term Care" book (published 2023). Nursing Home reform updates. Caregiver funding awareness.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Published author</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Policy advocacy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 5 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="map" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Age-Friendly City Task Force</h3>
+                                <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">2018 Survey</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">2018 senior survey results reviewed by SAC in July 2022. Foundation for ongoing age-friendly planning.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Baseline data</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- TIMELINE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="calendar" class="w-6 h-6 text-violet-400"></i>
+                Timeline
+            </h2>
+            <div class="relative">
+                <div class="absolute left-4 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                <!-- 2022 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-violet-500 flex items-center justify-center z-10 text-sm font-bold">22</div>
+                        <span class="text-xl font-bold">2022</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-violet-400 w-16">JAN</span>
+                            <span class="text-sm">Chair/Vice Chair elections; Video conference meetings continue</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">MAR</span>
+                            <span class="text-sm">Carol Kachadoorian speaks on mobility options (public comment)</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-fuchsia-400 w-16">JUL</span>
+                            <span class="text-sm">FY 2022-23 Work Plan approved; 2018 Age-Friendly survey reviewed</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-pink-400 w-16">SEPT</span>
+                            <span class="text-sm">Patricia Black: Rent Stabilization presentation; New members Sinha & Tymes</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-rose-400 w-16">OCT</span>
+                            <span class="text-sm">Celebration of Service — Oct 10, Lucky's Place at Shoreline Amphitheater</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-red-400 w-16">NOV</span>
+                            <span class="text-sm">2023 meeting schedule approved; Avenidas survey pending; Sourcewise rep needed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center z-10 text-sm font-bold">23</div>
+                        <span class="text-xl font-bold">2023</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-violet-400 w-16">JAN</span>
+                            <span class="text-sm">Chair Hui, Vice Chair Tymes elected; In-person meetings resume at Senior Center</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">FEB</span>
+                            <span class="text-sm">Subcommittees reorganized: removed Communications/Senior Center, added Work Plan/SCC/Sourcewise updates</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-violet-500/50">
+                            <span class="text-xs text-violet-400 w-16">FEB ⭐</span>
+                            <span class="text-sm font-medium">Vice Chair Tymes announces "American Long Term Care" book publication</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-fuchsia-400 w-16">APR</span>
+                            <span class="text-sm">Tymes benefit concert for Adult Daycare cancelled; Palo Alto survey shared</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-pink-400 w-16">JUL</span>
+                            <span class="text-sm">Gilfix begins Sourcewise Advisory Council role</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-rose-400 w-16">SEPT</span>
+                            <span class="text-sm">Brown Act discussion; FY 2023-24 subcommittee assignments</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-red-400 w-16">NOV</span>
+                            <span class="text-sm">Adult Protective Services awareness; 2024 schedule approved</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-fuchsia-500 flex items-center justify-center z-10 text-sm font-bold">24</div>
+                        <span class="text-xl font-bold">2024</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-violet-400 w-16">JAN</span>
+                            <span class="text-sm">Chair Tymes, Vice Chair Ogonowsky elected; CASOA Executive Summary draft presented</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">MAR</span>
+                            <span class="text-sm">Meeting held (agenda available)</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-amber-500/50">
+                            <span class="text-xs text-amber-400 w-16">FEB–NOV</span>
+                            <span class="text-sm">⚠️ Multiple meetings cancelled (Feb, Apr, May, Jun, Jul, Sept, Oct, Nov)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center z-10 text-sm font-bold">25</div>
+                        <span class="text-xl font-bold">2025</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-violet-400 w-16">MAR</span>
+                            <span class="text-sm">Meeting scheduled March 5 (agenda available)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- SUBCOMMITTEES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="layout-grid" class="w-6 h-6 text-violet-400"></i>
+                Subcommittees
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="file-text" class="w-5 h-5 text-violet-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Executive Summary</h3>
+                    <p class="text-xs text-gray-500">CASOA findings</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="megaphone" class="w-5 h-5 text-purple-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Outreach</h3>
+                    <p class="text-xs text-gray-500">Cross-commission</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-fuchsia-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="clipboard-check" class="w-5 h-5 text-fuchsia-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Senior Survey</h3>
+                    <p class="text-xs text-gray-500">Avenidas partnership</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="target" class="w-5 h-5 text-pink-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Work Plan</h3>
+                    <p class="text-xs text-gray-500">FY goals tracking</p>
+                </div>
+            </div>
+            <p class="text-gray-500 text-xs mt-4 text-center">Communications and Senior Center subcommittees discontinued Feb 2023</p>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PEOPLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="users" class="w-6 h-6 text-violet-400"></i>
+                People
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-4 text-violet-400">Committee Members (2024)</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span class="font-medium">Elna Tymes</span>
+                            <span class="px-2 py-0.5 rounded bg-violet-500/30 text-violet-300 text-xs">Chair</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Brian Ogonowsky</span>
+                            <span class="text-xs text-gray-500">Vice Chair</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Deeann Hui</span>
+                            <span class="text-xs text-gray-500">Former Chair 2023</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Ishendra Sinha</span>
+                            <span class="text-xs text-gray-500"></span>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold mb-3 mt-5 text-gray-400">Past Members</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Vicki Gilfix</span>
+                            <span class="text-xs text-gray-500">Chair 2022, Sourcewise rep</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Myrna Irigon</span>
+                            <span class="text-xs text-gray-500">Vice Chair 2022</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>James Nichols</span>
+                            <span class="text-xs text-gray-500"></span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Kieran Gonsalves</span>
+                            <span class="text-xs text-gray-500">Communications Subcommittee</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="glass rounded-2xl p-5 mb-4">
+                        <h3 class="font-semibold mb-4 text-blue-400">Staff Liaisons</h3>
+                        <div class="space-y-2">
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Petersen</div>
+                                <div class="text-xs text-gray-500">Staff Liaison (2022-23)</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Hernandez</div>
+                                <div class="text-xs text-gray-500">Staff Liaison (2023)</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Bittle</div>
+                                <div class="text-xs text-gray-500">Staff Liaison (2022)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <h3 class="font-semibold mb-4 text-purple-400">Meeting Info</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                                <span>3rd Wednesday, 2:00 PM</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+                                <span>Senior Center Small Meeting Room</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar-x" class="w-4 h-4 text-gray-500"></i>
+                                <span>No meetings: August, December</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- KEY PARTNERSHIPS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="handshake" class="w-6 h-6 text-violet-400"></i>
+                Key Partnerships
+            </h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
+                            <i data-lucide="users" class="w-5 h-5 text-violet-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Sourcewise</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">County Area Agency on Aging. Vicki Gilfix serves on Advisory Council (started July 2023). Regular updates to SAC.</p>
+                    <span class="text-xs text-violet-400">Advisory Council rep</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                            <i data-lucide="building-2" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <h3 class="font-semibold">SCC Senior Care Commission</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Vice Chair (now Chair) Tymes provides regular updates on county-level senior care policy work.</p>
+                    <span class="text-xs text-purple-400">County liaison</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-fuchsia-500/20 flex items-center justify-center">
+                            <i data-lucide="clipboard-list" class="w-5 h-5 text-fuchsia-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Avenidas</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Nonprofit partner conducting CASOA senior surveys. Results shared with SAC for local planning.</p>
+                    <span class="text-xs text-fuchsia-400">Survey partner</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PUBLIC PARTICIPATION -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="megaphone" class="w-6 h-6 text-violet-400"></i>
+                Public Participation
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-green-400">How to Participate</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-4 h-4 text-green-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">In-Person</div>
+                                <div class="text-gray-500">Senior Center Small Meeting Room<br>266 Escuela Avenue, Mountain View<br>3 min limit per speaker</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Email Comments</div>
+                                <div class="text-gray-500"><a href="mailto:sac@mountainview.gov">sac@mountainview.gov</a><br>By 12pm on meeting date<br>Include agenda item # in subject</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="video" class="w-4 h-4 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Zoom (when offered)</div>
+                                <div class="text-gray-500"><a href="https://mountainview.gov/meeting">mountainview.gov/meeting</a><br>*9 to raise hand, *6 to unmute</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-blue-400">External Links</h3>
+                    <div class="space-y-3 text-sm">
+                        <a href="https://mountainview.legistar.com" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="file-text" class="w-4 h-4 text-violet-400"></i>
+                            <div>
+                                <div class="font-medium text-white">Agendas & Minutes</div>
+                                <div class="text-gray-500">mountainview.legistar.com</div>
+                            </div>
+                        </a>
+                        <a href="https://www.mountainview.gov" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 text-purple-400"></i>
+                            <div>
+                                <div class="font-medium text-white">City of Mountain View</div>
+                                <div class="text-gray-500">mountainview.gov</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="phone" class="w-4 h-4 text-green-400"></i>
+                            <div>
+                                <div class="font-medium">Senior Center</div>
+                                <div class="text-gray-500">(650) 903-6330</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="accessibility" class="w-4 h-4 text-yellow-400"></i>
+                            <div>
+                                <div class="font-medium">ADA / City Clerk</div>
+                                <div class="text-gray-500">(650) 903-6304 — 48hrs advance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 border-t border-white/10 text-center text-gray-500 text-sm">
+            <p>Data source: Mountain View SAC Meeting Minutes & Agendas (Jan 2022 – Mar 2025)</p>
+            <p class="mt-1">Generated by OpenClaw • June 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

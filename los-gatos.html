@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Gatos Community Health & Senior Services Commission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * { font-family: 'Inter', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            min-height: 100vh;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .glass-hover:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, #10b981, #06b6d4, #3b82f6);
+        }
+        
+        .initiative-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .initiative-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        }
+        
+        .section-title {
+            background: linear-gradient(135deg, #10b981, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(16, 185, 129, 0.5); border-radius: 4px; }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+        }
+        
+        a { color: #5eead4; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body class="text-white p-4 md:p-8">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <header class="mb-8 fade-in text-center">
+            <div class="flex items-center justify-center gap-3 mb-2">
+                <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center">
+                    <i data-lucide="heart-pulse" class="w-7 h-7"></i>
+                </div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold gradient-text mb-2">Los Gatos CHSSC</h1>
+            <p class="text-gray-400">Community Health and Senior Services Commission • Town of Los Gatos</p>
+        </header>
+
+        <!-- Stats Row -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold">2021–2025</div>
+                <div class="text-gray-400 text-sm">4 years of records</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-emerald-400">7</div>
+                <div class="text-gray-400 text-sm">Task Forces</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-cyan-400">6+2</div>
+                <div class="text-gray-400 text-sm">Commissioners + Youth</div>
+            </div>
+            <div class="stat-card rounded-2xl p-4 text-center">
+                <div class="text-3xl font-bold text-blue-400">$300K</div>
+                <div class="text-gray-400 text-sm">FY24-25 Grants</div>
+            </div>
+        </div>
+
+        <!-- KEY INITIATIVES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="rocket" class="w-6 h-6 text-emerald-400"></i>
+                Key Initiatives
+            </h2>
+            <div class="space-y-4">
+                <!-- Initiative 1 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="map" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Senior Road Map</h3>
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium">Ongoing</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Multi-year strategic plan with annual progress reports to Town Council. Task forces assigned to each goal area.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Annual Council reports</span>
+                                <span class="px-2 py-1 rounded bg-white/10">7 task forces</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Progress tracking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 2 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="building" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Interim Community Center</h3>
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs font-medium">2024</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Near-term improvements to interim facility while exploring long-term new senior center options.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Public input gathered</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Operational support</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Keep consultant costs minimal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 3 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="user-plus" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Senior Service Coordinator</h3>
+                                <span class="px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-medium">Recruiting</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Part-time (0.4 FTE) position to coordinate senior services. Recruitment opened Dec 2024, interviews Feb 2025.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Application deadline: Jan 26, 2025</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Part-time position</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 4 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="hand-coins" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Community Grants Program</h3>
+                                <span class="px-3 py-1 rounded-full bg-green-500/20 text-green-400 text-xs font-medium">$300K FY24-25</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Annual grants supporting nonprofits. 38 applications received for FY24-25. Commissioners serve as grant raters.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">$180K community grants</span>
+                                <span class="px-2 py-1 rounded bg-white/10">$70K sustaining grants</span>
+                                <span class="px-2 py-1 rounded bg-white/10">$50K rental/food assistance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Initiative 5 -->
+                <div class="initiative-card glass rounded-2xl p-5">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center shrink-0">
+                            <i data-lucide="brain" class="w-6 h-6"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center justify-between mb-1">
+                                <h3 class="text-lg font-semibold">Mental Health & Caregiver Support</h3>
+                                <span class="px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs font-medium">Task Force 2</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-3">Senior Roadmap Project S4 (mental health) and S2 (caregiver support). Active focus area for 2024-25.</p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2 py-1 rounded bg-white/10">Behavioral health report</span>
+                                <span class="px-2 py-1 rounded bg-white/10">Caregiver strategies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- TIMELINE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="calendar" class="w-6 h-6 text-emerald-400"></i>
+                Timeline
+            </h2>
+            <div class="relative">
+                <div class="absolute left-4 top-0 bottom-0 w-1 timeline-line rounded-full"></div>
+                
+                <!-- 2021 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center z-10 text-sm font-bold">21</div>
+                        <span class="text-xl font-bold">2021</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-emerald-400 w-16">APR</span>
+                            <span class="text-sm">Presentations: SASCC, West Valley Community Services; Town Attorney Code of Conduct</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">MAY</span>
+                            <span class="text-sm">Cupertino Senior Center presentation; LGS Rec 55+ program overview ($250k lease)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2022 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center z-10 text-sm font-bold">22</div>
+                        <span class="text-xl font-bold">2022</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-emerald-400 w-16">JAN</span>
+                            <span class="text-sm">New Chair Konrad; Senior Service Committee created; KCAT 55+ programming</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">MAR</span>
+                            <span class="text-sm">Covia senior living proposal for former Meadows site; Spring into Green booth</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">APR</span>
+                            <span class="text-sm">CASOA Senior Survey results; LGS Rec ARPA grant update (335→398 members)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center z-10 text-sm font-bold">23</div>
+                        <span class="text-xl font-bold">2023</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-pink-400 w-16">FEB</span>
+                            <span class="text-sm">Pickleball court requests dominate Parks Commission public comment</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-orange-400 w-16">AUG</span>
+                            <span class="text-sm">CHSSC agenda packet with desk items</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-violet-500 flex items-center justify-center z-10 text-sm font-bold">24</div>
+                        <span class="text-xl font-bold">2024</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-emerald-400 w-16">FEB</span>
+                            <span class="text-sm">Interim Community Center public input; CHSSC brochure distribution</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-cyan-400 w-16">MAR</span>
+                            <span class="text-sm">Task Force assignments updated; Complete Streets Commission coordination</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-emerald-500/50">
+                            <span class="text-xs text-emerald-400 w-16">MAY ⭐</span>
+                            <span class="text-sm font-medium">$400 branded tablecloth approved; KCAT presentation</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-blue-400 w-16">JUN</span>
+                            <span class="text-sm">0.4 FTE Senior Coordinator position discussion; Community Grant raters selected</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3 border border-cyan-500/50">
+                            <span class="text-xs text-cyan-400 w-16">AUG ✓</span>
+                            <span class="text-sm font-medium">Annual Report presented to Council</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-purple-400 w-16">SEPT</span>
+                            <span class="text-sm">New Youth Commissioners Yilin Fang & Conner Krawez introduced</span>
+                        </div>
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-pink-400 w-16">NOV</span>
+                            <span class="text-sm">Mental health report (S4); Caregiver support strategies (S2)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2025 -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center z-10 text-sm font-bold">25</div>
+                        <span class="text-xl font-bold">2025</span>
+                    </div>
+                    <div class="ml-12 space-y-2">
+                        <div class="glass rounded-lg p-3 flex items-center gap-3">
+                            <span class="text-xs text-emerald-400 w-16">JAN</span>
+                            <span class="text-sm">Chair/Vice Chair election; DEI Commission rep appointment; Meeting time change to 4pm Tuesdays</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- TASK FORCES -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="users" class="w-6 h-6 text-emerald-400"></i>
+                Senior Road Map Task Forces
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-emerald-400 font-bold">1</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Governance</h3>
+                    <p class="text-xs text-gray-500">Konrad</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-cyan-400 font-bold">2</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Mental Health</h3>
+                    <p class="text-xs text-gray-500">S4 + S2 Caregiver</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-blue-400 font-bold">3</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Task Force 3</h3>
+                    <p class="text-xs text-gray-500">Active</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-violet-400 font-bold">4</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Task Force 4</h3>
+                    <p class="text-xs text-gray-500">Active</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-pink-400 font-bold">5</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Task Force 5</h3>
+                    <p class="text-xs text-gray-500">Active</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-orange-400 font-bold">6</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Task Force 6</h3>
+                    <p class="text-xs text-gray-500">Active</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-yellow-500/20 flex items-center justify-center mx-auto mb-2">
+                        <span class="text-yellow-400 font-bold">7</span>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Survey</h3>
+                    <p class="text-xs text-gray-500">Local govt outreach</p>
+                </div>
+                <div class="glass rounded-xl p-4 glass-hover text-center">
+                    <div class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center mx-auto mb-2">
+                        <i data-lucide="star" class="w-5 h-5 text-red-400"></i>
+                    </div>
+                    <h3 class="font-medium text-sm mb-1">Grants</h3>
+                    <p class="text-xs text-gray-500">2 raters selected</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PEOPLE -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="users" class="w-6 h-6 text-emerald-400"></i>
+                People
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-4 text-emerald-400">Commissioners (2024–25)</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span class="font-medium">Eleanor Yick</span>
+                            <span class="px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-300 text-xs">Chair</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Jeffrey P. Blum</span>
+                            <span class="text-xs text-gray-500">Vice Chair, Los Gatan articles</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Dick Konrad</span>
+                            <span class="text-xs text-gray-500">Governance TF, Sourcewise</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>George Rossmann</span>
+                            <span class="text-xs text-gray-500">Sourcewise rep</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Pradeep Khanal</span>
+                            <span class="text-xs text-gray-500">DEI Commission liaison</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5">
+                            <span>Martha Sterne</span>
+                            <span class="text-xs text-gray-500">Volunteer logistics</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5 border border-cyan-500/30">
+                            <span>Yilin Fang</span>
+                            <span class="text-xs text-cyan-400">Youth Commissioner</span>
+                        </div>
+                        <div class="flex items-center justify-between p-2 rounded-lg bg-white/5 border border-cyan-500/30">
+                            <span>Conner Krawez</span>
+                            <span class="text-xs text-cyan-400">Youth Commissioner</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="glass rounded-2xl p-5 mb-4">
+                        <h3 class="font-semibold mb-4 text-blue-400">Staff & Liaisons</h3>
+                        <div class="space-y-2">
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Katy Nomura</div>
+                                <div class="text-xs text-gray-500">Assistant Town Manager</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Ryan Baker</div>
+                                <div class="text-xs text-gray-500">Library Director</div>
+                            </div>
+                            <div class="p-2 rounded-lg bg-white/5">
+                                <div class="font-medium">Matthew Hudes</div>
+                                <div class="text-xs text-gray-500">Council Liaison</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass rounded-2xl p-5">
+                        <h3 class="font-semibold mb-4 text-pink-400">Meeting Info</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                                <span>4th Tuesday, 4:00 PM <span class="text-green-400">(new 2025)</span></span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="map-pin" class="w-4 h-4 text-gray-500"></i>
+                                <span>110 E Main St, Town Council Chambers</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calendar-x" class="w-4 h-4 text-gray-500"></i>
+                                <span>July recess (no meeting)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- KEY PARTNERSHIPS -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="handshake" class="w-6 h-6 text-emerald-400"></i>
+                Key Partnerships
+            </h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                            <i data-lucide="users" class="w-5 h-5 text-emerald-400"></i>
+                        </div>
+                        <h3 class="font-semibold">LGS Recreation</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">55+ Program with 400+ members. ARPA grant recipient. Operates under JPA with $250k lease to Town.</p>
+                    <span class="text-xs text-emerald-400">Primary senior programming</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-cyan-500/20 flex items-center justify-center">
+                            <i data-lucide="tv" class="w-5 h-5 text-cyan-400"></i>
+                        </div>
+                        <h3 class="font-semibold">KCAT</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Local community TV. Commissioners interviewed about CHSSC work. 55+ programming support.</p>
+                    <span class="text-xs text-cyan-400">Media partner</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
+                            <i data-lucide="heart" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Sourcewise</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">County Area Agency on Aging. Commissioner Rossmann serves as rep. Legislative advocacy.</p>
+                    <span class="text-xs text-blue-400">County partner</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-violet-500/20 flex items-center justify-center">
+                            <i data-lucide="car" class="w-5 h-5 text-violet-400"></i>
+                        </div>
+                        <h3 class="font-semibold">SASCC</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Saratoga Area Senior Coordinating Council. RYDE transportation, Outlook newspaper, Adult Day Program.</p>
+                    <span class="text-xs text-violet-400">Regional services</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-pink-500/20 flex items-center justify-center">
+                            <i data-lucide="home" class="w-5 h-5 text-pink-400"></i>
+                        </div>
+                        <h3 class="font-semibold">West Valley Community Services</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Safety net services: food support, emergency rental/utility assistance, homeless support, CARE program.</p>
+                    <span class="text-xs text-pink-400">$21K sustaining grant</span>
+                </div>
+                <div class="glass rounded-2xl p-5 glass-hover">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center">
+                            <i data-lucide="utensils" class="w-5 h-5 text-orange-400"></i>
+                        </div>
+                        <h3 class="font-semibold">Live Oak Senior Nutrition</h3>
+                    </div>
+                    <p class="text-sm text-gray-400 mb-2">Senior meal program. Received $48K sustaining grant for FY24-25.</p>
+                    <span class="text-xs text-orange-400">$48K sustaining grant</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider my-10"></div>
+
+        <!-- PUBLIC PARTICIPATION -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold section-title mb-6 flex items-center gap-2">
+                <i data-lucide="megaphone" class="w-6 h-6 text-emerald-400"></i>
+                Public Participation
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-green-400">How to Participate</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-green-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="user" class="w-4 h-4 text-green-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">In-Person (Required for speaking)</div>
+                                <div class="text-gray-500">110 E Main Street, Town Council Chambers<br>Complete speaker card, 3 min limit</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-blue-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="mail" class="w-4 h-4 text-blue-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Written Comments</div>
+                                <div class="text-gray-500">Email: <a href="mailto:clerk@losgatosca.gov">clerk@losgatosca.gov</a><br>Subject: "Public Comment Item #__"</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center shrink-0">
+                                <i data-lucide="clock" class="w-4 h-4 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">Deadlines</div>
+                                <div class="text-gray-500">Agenda packet: 11am Friday before<br>Supplemental: 11am day before<br>Desk item: 11am day of</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-5">
+                    <h3 class="font-semibold mb-3 text-blue-400">External Links</h3>
+                    <div class="space-y-3 text-sm">
+                        <a href="https://www.losgatosca.gov" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="external-link" class="w-4 h-4 text-blue-400"></i>
+                            <div>
+                                <div class="font-medium text-white">Town of Los Gatos</div>
+                                <div class="text-gray-500">losgatosca.gov</div>
+                            </div>
+                        </a>
+                        <a href="https://losgatos-ca.municodemeetings.com/" target="_blank" class="flex items-center gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="file-text" class="w-4 h-4 text-emerald-400"></i>
+                            <div>
+                                <div class="font-medium text-white">Agendas & Materials</div>
+                                <div class="text-gray-500">Municode Meetings</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="phone" class="w-4 h-4 text-green-400"></i>
+                            <div>
+                                <div class="font-medium">Town Clerk</div>
+                                <div class="text-gray-500">(408) 354-6834</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                            <i data-lucide="accessibility" class="w-4 h-4 text-yellow-400"></i>
+                            <div>
+                                <div class="font-medium">ADA Accommodations</div>
+                                <div class="text-gray-500">Request 2 business days prior</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-6 border-t border-white/10 text-center text-gray-500 text-sm">
+            <p>Data source: Los Gatos CHSSC Meeting Minutes & Agendas (Apr 2021 – Jan 2025)</p>
+            <p class="mt-1">Generated by OpenClaw • June 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
